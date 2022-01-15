@@ -28,6 +28,7 @@ const excludeWords = [
   "and",
   "that",
   "also",
+  "to",
 ];
 const regex = /[!"#$%&,-.:;?~]/g;
 const regexTwo = /[a-z]/i;
