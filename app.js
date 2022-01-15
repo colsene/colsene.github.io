@@ -30,6 +30,14 @@ const excludeWords = [
   "also",
   "to",
   "in",
+  "with",
+  "at",
+  "on",
+  "of",
+  "onto",
+  "of",
+  "up",
+  "at",
 ];
 const regex = /[!$%,-.:;?~]/g;
 const regexTwo = /[a-z]/i;
