@@ -68,6 +68,8 @@ const app = Vue.createApp({
           this.newSentence += word.toUpperCase() + "DGEVAN ";
         } else if (word.charAt(word.length - 1).toUpperCase() === "D") {
           this.newSentence += word + "gevan ";
+        } else if (word.slice(word.length - 3).toUpperCase() === "DGE") {
+          this.newSentence += word + "van ";
         } else {
           this.newSentence += word + "dgevan ";
         }
