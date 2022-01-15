@@ -66,6 +66,8 @@ const app = Vue.createApp({
           }
         } else if (word.toUpperCase() === "TZUYANG") {
           this.newSentence += word.toUpperCase() + "DGEVAN ";
+        } else if (word.charAt(word.length - 1).toUpperCase() === "D") {
+          this.newSentence += word + "gevan ";
         } else {
           this.newSentence += word + "dgevan ";
         }
