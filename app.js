@@ -37,7 +37,6 @@ const excludeWords = [
   "onto",
   "of",
   "up",
-  "at",
 ];
 const regex = /[!$%,-.:;?~]/g;
 const regexTwo = /[a-z]/i;
