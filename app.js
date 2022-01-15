@@ -37,8 +37,11 @@ const excludeWords = [
   "onto",
   "of",
   "up",
+  "as",
+  "do",
+  "i'd",
 ];
-const regex = /[!$%,-.:;?~]/g;
+const regex = /[!$%,-.:;?~)]/g;
 const regexTwo = /[a-z]/i;
 
 const app = Vue.createApp({
