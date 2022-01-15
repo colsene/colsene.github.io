@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translatordgevan</title>
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body
+    id="translator"
+    style="
+      background-color: rgb(59, 59, 59);
+      color: blanchedalmond;
+      text-align: center;
+      margin-top: 30px;
+    "
+  >
+    <label for="input" style="font-size: 175%">Text to translatedgevan:</label
+    ><br />
+    <br />
+    <input
+      @keyup.enter="translatedgevan"
+      style="
+        background-color: rgb(105, 105, 105);
+        color: blanchedalmond;
+        text-align: center;
+        font-size: 150%;
+      "
+      type="text"
+      id="input"
+      v-model="userInput"
+    />
+    <button
+      @click="translatedgevan"
+      style="
+        font-size: 140%;
+        margin-left: 20px;
+        background-color: rgb(214, 214, 214);
+      "
+    >
+      Translategevan!
+    </button>
+    <div
+      v-if="newSentence !== ''"
+      style="display: flex; justify-content: center"
+    >
+      <p
+        style="
+          font-size: 175%;
+          max-width: 600px;
+          min-width: 400px;
+          margin-bottom: 75px;
+          margin-right: 150px;
+        "
+      >
+        Translated text: <br />{{ newSentence }}
+      </p>
+      <p style="font-size: 175%; max-width: 600px; min-width: 400px">
+        Original text: <br />{{ originalInput }}
+      </p>
+    </div>
+  </body>
+</html>
