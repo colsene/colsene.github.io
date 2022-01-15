@@ -30,7 +30,7 @@ const excludeWords = [
   "also",
   "to",
 ];
-const regex = /[!"#$%&,-.:;?~]/g;
+const regex = /[!$%,-.:;?~]/g;
 const regexTwo = /[a-z]/i;
 
 const app = Vue.createApp({
@@ -53,8 +53,18 @@ const app = Vue.createApp({
           this.newSentence += word + " ";
         } else if (word.match(regex)) {
           let index = word.search(regex);
-          this.newSentence +=
-            word.slice(0, index) + "dgevan" + word.slice(index) + " ";
+          if (word.slice(0, index).toUpperCase() === "TZUYANG") {
+            this.newSentence +=
+              word.slice(0, index).toUpperCase() +
+              "DGEVAN" +
+              word.slice(index) +
+              " ";
+          } else {
+            this.newSentence +=
+              word.slice(0, index) + "dgevan" + word.slice(index) + " ";
+          }
+        } else if (word.toUpperCase() === "TZUYANG") {
+          this.newSentence += word.toUpperCase() + "DGEVAN ";
         } else {
           this.newSentence += word + "dgevan ";
         }
