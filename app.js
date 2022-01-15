@@ -72,21 +72,16 @@ const app = Vue.createApp({
           let index = word.search(regex);
           if (excludeWords.includes(word.slice(0, index).toLowerCase())) {
             this.newSentence += word + " ";
-          } else if (word.slice(0, index).toUpperCase() === "TZUYANG") {
+          } else if (word.slice(0, index).toLowerCase() === "tzuyang") {
             this.newSentence +=
               word.slice(0, index).toUpperCase() +
               "DGEVAN" +
               word.slice(index) +
               " ";
-          } else if (
-            word
-              .charAt(word.length - 1)
-              .toUpperCase()
-              .match(regexTwo)
-          ) {
-            if (word.charAt(word.length - 1).toUpperCase() === "D") {
+          } else if (word.charAt(word.length - 1).match(regexTwo)) {
+            if (word.charAt(word.length - 1).toLowerCase() === "d") {
               this.newSentence += word + "gevan ";
-            } else if (word.slice(word.length - 3).toUpperCase() === "DGE") {
+            } else if (word.slice(word.length - 3).toLowerCase() === "dge") {
               this.newSentence += word + "van ";
             } else {
               this.newSentence += word + "dgevan ";
@@ -95,11 +90,11 @@ const app = Vue.createApp({
             this.newSentence +=
               word.slice(0, index) + "dgevan" + word.slice(index) + " ";
           }
-        } else if (word.toUpperCase() === "TZUYANG") {
-          this.newSentence += word.toUpperCase() + "DGEVAN ";
-        } else if (word.charAt(word.length - 1).toUpperCase() === "D") {
+        } else if (word.toLowerCase() === "tzuyang") {
+          this.newSentence += word.toLowerCase() + "dgevan ";
+        } else if (word.charAt(word.length - 1).toLowerCase() === "d") {
           this.newSentence += word + "gevan ";
-        } else if (word.slice(word.length - 3).toUpperCase() === "DGE") {
+        } else if (word.slice(word.length - 3).toLowerCase() === "dge") {
           this.newSentence += word + "van ";
         } else {
           this.newSentence += word + "dgevan ";
