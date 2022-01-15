@@ -91,7 +91,7 @@ const app = Vue.createApp({
               word.slice(0, index) + "dgevan" + word.slice(index) + " ";
           }
         } else if (word.toLowerCase() === "tzuyang") {
-          this.newSentence += word.toLowerCase() + "dgevan ";
+          this.newSentence += word.toUpperCase() + "DGEVAN ";
         } else if (word.charAt(word.length - 1).toLowerCase() === "d") {
           this.newSentence += word + "gevan ";
         } else if (word.slice(word.length - 3).toLowerCase() === "dge") {
