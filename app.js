@@ -40,6 +40,9 @@ const excludeWords = [
   "as",
   "do",
   "i'd",
+  "be",
+  "me",
+  "so",
 ];
 const regex = /[!$%,-.:;?~)]/g;
 const regexTwo = /[a-z]/i;
@@ -60,16 +63,34 @@ const app = Vue.createApp({
       }
       let sentence = this.userInput.split(" ");
       for (word of sentence) {
-        if (excludeWords.includes(word) || !word.match(regexTwo)) {
+        if (
+          excludeWords.includes(word.toLowerCase()) ||
+          !word.match(regexTwo)
+        ) {
           this.newSentence += word + " ";
         } else if (word.match(regex)) {
           let index = word.search(regex);
-          if (word.slice(0, index).toUpperCase() === "TZUYANG") {
+          if (excludeWords.includes(word.slice(0, index).toLowerCase())) {
+            this.newSentence += word + " ";
+          } else if (word.slice(0, index).toUpperCase() === "TZUYANG") {
             this.newSentence +=
               word.slice(0, index).toUpperCase() +
               "DGEVAN" +
               word.slice(index) +
               " ";
+          } else if (
+            word
+              .charAt(word.length - 1)
+              .toUpperCase()
+              .match(regexTwo)
+          ) {
+            if (word.charAt(word.length - 1).toUpperCase() === "D") {
+              this.newSentence += word + "gevan ";
+            } else if (word.slice(word.length - 3).toUpperCase() === "DGE") {
+              this.newSentence += word + "van ";
+            } else {
+              this.newSentence += word + "dgevan ";
+            }
           } else {
             this.newSentence +=
               word.slice(0, index) + "dgevan" + word.slice(index) + " ";
